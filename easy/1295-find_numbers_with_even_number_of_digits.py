@@ -26,3 +26,15 @@ def findNumbers(nums):
         else:
             continue
     return result
+
+
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        result = 0
+
+        for v in nums:
+            l = int(math.log10(v)) + 1
+            if l % 2 == 0:
+                result += 1
+        
+        return result

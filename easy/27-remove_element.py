@@ -58,3 +58,23 @@ def removeElement(nums, val):
                 last_replace_index -= 1
         else:
             front_index += 1
+
+
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        index_to_shift = len(nums) - 1
+        i = 0
+
+        while i <= index_to_shift:
+            if nums[i] == val:
+                if nums[index_to_shift] == val:
+                    #del nums[index_to_shift]
+                    nums.pop(index_to_shift)
+                    index_to_shift -= 1
+                else:
+                    nums[i] = nums[index_to_shift]
+                    #del nums[index_to_shift]
+                    nums.pop(index_to_shift)
+                    index_to_shift -= 1
+            else:
+                i += 1

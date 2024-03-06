@@ -48,3 +48,17 @@ def removeDuplicates(nums):
             unique_count += 1
 
     return unique_count
+
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        i = 0
+        j = 1
+        while j < len(nums):
+            if i != j:
+                if nums[i] == nums[j]:
+                    nums.pop(j)
+                else:
+                    i += 1
+            else:
+                j += 1
